@@ -1,16 +1,16 @@
-name: Fast Success
+name: Delayed Failure
 on: [push]
 jobs:
-  bar:
-    name: "Bar"
+  foo:
+    name: "Foo"
     runs-on: ubuntu-latest
     steps:
       - name: Sleep
-        run: sleep 1m
+        run: sleep 3m
   required-for-merge:
     name: "Required for merge"
     runs-on: ubuntu-latest
-    needs: [ bar ]
+    needs: [ foo ]
     steps:
-      - name: Succeed
-        run: true
+      - name: Fail
+        run: false
