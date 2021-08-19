@@ -1,0 +1,9 @@
+name: Fast Success
+on: [push]
+jobs:
+  build:
+    name: "Required for merge"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Succeed
+        run: true
